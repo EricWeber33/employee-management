@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const app = express();
 
@@ -8,6 +9,6 @@ app.get("/api", (req, res) => {
     });
 });
 
-app.listen(5000, () => {
+app.listen(process.env.SERVER_PORT, () => {
     console.log("Server running")
 })

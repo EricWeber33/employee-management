@@ -2,7 +2,6 @@ const pool = require("../../config/database");
 
 module.exports = {
     create: (data, callback) => {
-        console.log("POST DATA: ", data);
         pool.query(
             `INSERT INTO employees(firstName, lastName, salary)
                 VALUES(?, ?, ?)`,
@@ -17,6 +16,17 @@ module.exports = {
                 }
                 return callback(null, results);
             }
-        )
+        );
+    },
+    read: (callback) => {
+        pool.query(
+            `SELECT * FROM employees`,
+            (error, results, fields) => {
+                if (error) {
+                    callback(error);
+                }
+                return callback(null, results);
+            }
+        );
     }
 };

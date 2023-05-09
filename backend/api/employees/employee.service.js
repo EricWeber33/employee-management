@@ -28,5 +28,19 @@ module.exports = {
                 return callback(null, results);
             }
         );
+    },
+    del: (data, callback) => {
+        pool.query(
+            `DELETE FROM employees WHERE id=?`,
+            [
+               data.id 
+            ],
+            (error, results) => {
+                if (error) {
+                    callback(error);
+                }
+                return callback(null, results);
+            }
+        );
     }
 };

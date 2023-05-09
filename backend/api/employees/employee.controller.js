@@ -1,4 +1,4 @@
-const  {create, read, del}  = require("./employee.service");
+const  {create, read, update, del}  = require("./employee.service");
 
 
 const errJson = {
@@ -22,6 +22,19 @@ module.exports = {
     },
     readEmployees: (req, res) => {
         read((error, results) => {
+            if (error) {
+                console.log(error);
+                return res.status(500).json(errJson);
+            }
+            return res.status(200).json({
+                success: 1,
+                data: results
+            });
+        });
+    },
+    updateEmployee: (req, res) => {
+        const body = req.body;
+        update(body, (error, results) => {
             if (error) {
                 console.log(error);
                 return res.status(500).json(errJson);

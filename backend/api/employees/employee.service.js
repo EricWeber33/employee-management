@@ -29,6 +29,23 @@ module.exports = {
             }
         );
     },
+    update: (data, callback) => {
+        pool.query(
+            `UPDATE employees SET firstName = ?, lastName = ?, salary = ? WHERE id = ?`,
+            [
+                data.firstName,
+                data.lastName,
+                data.salary,
+                data.id
+            ],
+            (error, results, fields) => {
+                if (error) {
+                    callback(error);
+                }
+                return callback(null, results);
+            }
+        )
+    },
     del: (data, callback) => {
         pool.query(
             `DELETE FROM employees WHERE id=?`,

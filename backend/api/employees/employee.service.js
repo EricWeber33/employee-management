@@ -29,14 +29,14 @@ module.exports = {
             }
         );
     },
-    update: (data, callback) => {
+    update: (data, id, callback) => {
         pool.query(
             `UPDATE employees SET firstName = ?, lastName = ?, salary = ? WHERE id = ?`,
             [
                 data.firstName,
                 data.lastName,
                 data.salary,
-                data.id
+                id
             ],
             (error, results, fields) => {
                 if (error) {
@@ -46,11 +46,11 @@ module.exports = {
             }
         )
     },
-    del: (data, callback) => {
+    del: (id, callback) => {
         pool.query(
             `DELETE FROM employees WHERE id=?`,
             [
-               data.id 
+               id 
             ],
             (error, results) => {
                 if (error) {

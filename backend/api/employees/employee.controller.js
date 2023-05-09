@@ -34,7 +34,7 @@ module.exports = {
     },
     updateEmployee: (req, res) => {
         const body = req.body;
-        update(body, (error, results) => {
+        update(body, req.params.id, (error, results) => {
             if (error) {
                 console.log(error);
                 return res.status(500).json(errJson);
@@ -46,8 +46,7 @@ module.exports = {
         });
     },
     deleteEmployee: (req, res) => {
-        const body = req.body;
-        del(body, (error, results) => {
+        del(req.params.id, (error, results) => {
             if (error) {
                 console.log(error);
                 return res.status(500).json(errJson);

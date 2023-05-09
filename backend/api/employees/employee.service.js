@@ -12,7 +12,7 @@ module.exports = {
             ],
             (error, results, fields) => {
                 if (error) {
-                    callback(error);
+                    return callback(error);
                 }
                 return callback(null, results);
             }
@@ -23,7 +23,7 @@ module.exports = {
             `SELECT * FROM employees`,
             (error, results, fields) => {
                 if (error) {
-                    callback(error);
+                    return callback(error);
                 }
                 return callback(null, results);
             }
@@ -40,7 +40,7 @@ module.exports = {
             ],
             (error, results, fields) => {
                 if (error) {
-                    callback(error);
+                    return callback(error);
                 }
                 return callback(null, results);
             }
@@ -54,7 +54,7 @@ module.exports = {
             ],
             (error, results) => {
                 if (error) {
-                    callback(error);
+                    return callback(error);
                 }
                 return callback(null, results);
             }

@@ -3,7 +3,7 @@ const  {create, read, update, del}  = require("./employee.service");
 
 const errJson = {
     success: 0,
-    message: "Error connecting to database"
+    message: "Database Error"
 }
 
 module.exports = {

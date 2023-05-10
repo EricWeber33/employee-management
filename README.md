@@ -23,3 +23,33 @@
 
 ### Questions? ###
 Please reach out to me with any questions
+
+### Deployment Instructions: ###
+To run the app locally you will need a running MYSQL database.
+Additionally within `backend/` a `.env` file will need to be provided with the following environment variables:
+```
+DB_PORT=your_db_port
+SERVER_PORT=5000
+DB_HOST=your_db_host
+DB_USER=your_qb_user
+DB_PASS=your_db_pass
+MYSQL_DB=your_db
+```
+Once this is done the database can have its database initialized, from the project root:
+```
+$ cd backend
+backend:$ npm install
+backend:$ npm run db_init
+```
+To run the backend run:
+```
+backend:$ npm run start
+```
+Once the backend is running to run the frontend perform the following:
+```
+backend:$ cd ../frontend
+frontend:$ npm install
+frontend:$ npm run prepare
+frontend:$ npm run dev
+```
+The application should now be running at `http://localhost:5173/`

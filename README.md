@@ -53,3 +53,11 @@ frontend:$ npm run prepare
 frontend:$ npm run dev
 ```
 The application should now be running at `http://localhost:5173/`
+
+#### Sample Image: ####
+![image](https://github.com/EricWeber33/employee-management/assets/61605018/9f7aa924-e1d5-4db3-b29b-e5ea11a62204)
+
+#### Tech Stack: ####
+Backend: Node + Express
+
+Frontend: Svelte with Svelte material ui.
